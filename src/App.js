@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
@@ -21,10 +21,12 @@ import {
   Editor,
   Line,
 } from "./pages";
+// import { useStateContext } from "./contexts/ContextProvider";
+import { StateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useContext(StateContext);
   return (
     <>
       <div>
