@@ -6,13 +6,28 @@ const initialState = {
   chat: false,
   cart: false,
   userProfile: false,
-  notfication: false,
+  notification: false,
 };
 
 const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
+  const [isClick, setIsClick] = useState(initialState);
+  const [screenSize, setScreenSize] = useState(undefined);
+  const handleClick = (clicked) => {
+    setIsClick({ ...initialState, [clicked]: true });
+  };
   return (
-    <StateContext.Provider value={{ activeMenu }}>
+    <StateContext.Provider
+      value={{
+        activeMenu,
+        setActiveMenu,
+        isClick,
+        setIsClick,
+        handleClick,
+        screenSize,
+        setScreenSize,
+      }}
+    >
       {/* always have to return the children */}
       {children}
     </StateContext.Provider>

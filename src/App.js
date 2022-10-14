@@ -21,7 +21,6 @@ import {
   Editor,
   Line,
 } from "./pages";
-// import { useStateContext } from "./contexts/ContextProvider";
 import { StateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
