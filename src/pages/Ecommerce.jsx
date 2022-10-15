@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { Stacked, Pie, Button, SparkLine } from "../components";
@@ -10,6 +10,7 @@ import {
 import { StateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
+  const { currentColor } = useContext(StateContext);
   return (
     <>
       <div className="mt-24">
@@ -24,7 +25,7 @@ const Ecommerce = () => {
             <div className="mt-6">
               <Button
                 color="white"
-                bgColor="blue"
+                bgColor={currentColor}
                 text="Download"
                 borderRadius="10px"
                 size="md"
@@ -96,18 +97,18 @@ const Ecommerce = () => {
                 </div>
                 <div className="mt-5">
                   <SparkLine
-                    currentColor="blue"
+                    currentColor={currentColor}
                     id="line-sparkline"
                     type="Line"
                     height="80px"
                     width="250px"
                     data={SparklineAreaData}
-                    color="blue"
+                    color={currentColor}
                   />
                 </div>
                 <div className="mt-10">
                   <Button
-                    bgColor="blue"
+                    bgColor={currentColor}
                     color="white"
                     text="Download Report"
                     borderRadius="10px"
